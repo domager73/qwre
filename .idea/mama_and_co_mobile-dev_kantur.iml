@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/api_models/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/api_models/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/api_models/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/blocs/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/blocs/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/blocs/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/models/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/models/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/models/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/repositories/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/repositories/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/repositories/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/services/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/services/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/services/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/shared/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/shared/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/shared/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/ui_kit/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/ui_kit/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/ui_kit/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Flutter Plugins" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
+  </component>
+</module>

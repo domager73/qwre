@@ -1,0 +1,35 @@
+name: shared
+description: A new Flutter project.
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.6 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  file_picker: ^6.1.1
+  get_it: ^7.6.4
+  flutter_secure_storage: ^9.0.0
+  shared_preferences: ^2.2.2
+  web_socket_channel: ^2.4.0
+  flutter_exif_rotation: ^0.5.1
+  flutter_downloader: ^1.11.6
+  permission_handler: ^11.1.0
+  path_provider: ^2.1.1
+  uuid: ^4.1.0
+  dio: ^5.4.0
+  api_models:
+    path: ../api_models
+  models:
+    path: ../models
+  blocs:
+    path: ../blocs
+  image_picker: ^1.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0

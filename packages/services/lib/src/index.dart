@@ -1,0 +1,15 @@
+export 'auth/auth_service.dart';
+export 'geo/geo_service.dart';
+export 'сonsultation/сonsultation_service.dart';
+export 'doctor/doctor_service.dart';
+export 'account_avatar/account_avatar_service.dart';
+export 'resources/resources_service.dart';
+export 'user/user_service.dart';
+export 'child/child_service.dart';
+export 'online_school/online_school_service.dart';
+export 'article/article_service.dart';
+export 'music/music_service.dart';
+export 'chat/chat_service.dart';
+export 'growth/growth_service.dart';
+export 'feed/feed_service.dart';
+export 'promocode/promocode_service.dart';

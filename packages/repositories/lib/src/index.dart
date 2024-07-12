@@ -1,0 +1,14 @@
+export 'auth/auth_repository.dart';
+export 'geo/geo_repository.dart';
+export 'user/user_repository.dart';
+export 'resources/resources_repository.dart';
+export 'account_avatar/account_avatar_repository.dart';
+export 'child/child_repository.dart';
+export 'doctor/doctor_repository.dart';
+export 'online_school/online_school_repository.dart';
+export 'article/article_repository.dart';
+export 'сonsultation/сonsultation_repository.dart';
+export 'music/music_repository.dart';
+export 'chat/chat_repository.dart';
+export 'growth/growth_repository.dart';
+export 'feed/feed_repository.dart';
