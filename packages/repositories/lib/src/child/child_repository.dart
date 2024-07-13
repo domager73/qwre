@@ -16,8 +16,10 @@ class ChildRepository {
     required double height,
     required bool isTwins,
     required String secondName,
+    required String info,
     required double weight,
   }) async {
+    print("BD ${birthDate}");
     final result = await _childService.addChild(
       birthDate: birthDate,
       childBirth: childBirth,
@@ -29,6 +31,7 @@ class ChildRepository {
       isTwins: isTwins,
       secondName: secondName,
       weight: weight,
+      info: info
     );
 
     return RequestDataModel(

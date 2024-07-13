@@ -111,8 +111,8 @@ class AuthService {
       final refresh = _removeBearer(accessResponse.refreshToken);
       await _secureStorageService.setValue(SharedPrefKeys.accessToken, access);
       await _secureStorageService.setValue(SharedPrefKeys.refreshToken, refresh);
-      // log('access: $access');
-      // log('refresh: $refresh');
+      log('access: $access');
+      log('refresh: $refresh');
 
       return accessResponse;
     } on DioError catch (e) {

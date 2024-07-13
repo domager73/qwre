@@ -133,6 +133,7 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
       final childs = initState.userResultDataModel.childs.toList();
 
       childs[event.indexChildCard] = event.childDataModel;
+      print(event.childDataModel);
 
       final userResult = UserResultDataModel(
         account: initState.userResultDataModel.account,
@@ -161,7 +162,7 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
         id: '',
         avatar: '',
         info: '',
-        birthDate: '',
+        birthDate: DateTime.now().toString(),
         childBirth: '',
         childbirthWithComplications: false,
         createdAt: '',
@@ -300,12 +301,14 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
 
       for (int i = 0; i < initState.userResultDataModel.childs.length; i++) {
         if (initState.userResultDataModel.childs[i].id.isEmpty) {
+          print(initState.userResultDataModel);
           if (initState.userResultDataModel.childs[i].firstName.isNotEmpty &&
               initState.userResultDataModel.childs[i].height != 0 &&
               initState.userResultDataModel.childs[i].headCirc != 0 &&
               initState.userResultDataModel.childs[i].weight != 0 &&
               initState.userResultDataModel.childs[i].birthDate.isNotEmpty) {
             result = await _childRepository.addChild(
+              info: initState.userResultDataModel.childs[i].info,
               birthDate: initState.userResultDataModel.childs[i].birthDate,
               childBirth: initState.userResultDataModel.childs[i].childBirth,
               childbirthWithComplications: initState.userResultDataModel.childs[i].childbirthWithComplications,

@@ -19,6 +19,9 @@ class ChatsItemGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("-----");
+    print(item.groupChat);
+
     return GestureDetector(
       onTap: selectChat,
       child: Container(

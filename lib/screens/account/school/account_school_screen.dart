@@ -387,15 +387,7 @@ class _AccountSchoolScreenState extends State<AccountSchoolScreen> {
                                       ? InkWell(
                                           onTap: () {
                                             context.read<AccountBloc>().add(const AccountEvent.saveInfoOnlineSchool());
-                                            ScaffoldMessenger.of(context).showSnackBar(
-                                              SnackBar(
-                                                content: Text(
-                                                  'Сохранено',
-                                                  style: AppStyles.sfProRegular14.copyWith(color: AppColor.white),
-                                                ),
-                                                behavior: SnackBarBehavior.floating,
-                                              ),
-                                            );
+
                                             FocusScope.of(context).requestFocus(FocusNode());
 
 

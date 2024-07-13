@@ -30,7 +30,7 @@ class _UserParametersInfoState extends State<UserParametersInfo> {
 
   @override
   void initState() {
-    weightChild = widget.weightChild;
+    weightChild = widget.weightChild ;
     heightChild = widget.heightChild;
     headCircumferenceChild = widget.headCircumferenceChild;
     super.initState();

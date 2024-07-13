@@ -44,9 +44,6 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     );
 
     userDataModelState();
-    // _onlineSchoolRepository.updateOnlineSchoolDataStream.stream.listen((event) =>
-    //   emit(MainState.load())
-    // );
   }
 
   StreamSubscription<dynamic>? userDataModelState() {
@@ -59,8 +56,6 @@ class MainBloc extends Bloc<MainEvent, MainState> {
           add(MainEvent.updateDataDoctor(value.doctorDataModel));
         },
         preloadDataOnlineSchool: (value) {
-          print("VALUE ${value.onlineSchoolDataModel}");
-          print('go with name ${value.onlineSchoolDataModel.name}');
           add(MainEvent.updateDataSchool(value.onlineSchoolDataModel));
         },
         orElse: () => null,

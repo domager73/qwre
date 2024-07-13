@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -60,6 +61,10 @@ class PlayerBloc extends Bloc<PlayerEvent, PlayerState> {
         _audioPlayer.setUrl(
             'https://api.mama-api.ru/api/v1/music/${event.music?.name ?? ''}');
         _audioPlayer.play();
+        print("PLAYING");
+        print(event.music);
+        print('https://api.mama-api.ru/api/v1/music/${event.music?.name ?? ''}');
+
       }
 
       _updateDataService.selectIndexAudio = event.selectedIndex ?? 0;

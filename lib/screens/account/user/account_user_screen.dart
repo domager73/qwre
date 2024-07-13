@@ -4,6 +4,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mama_co/mama_co_navigation_bar/mama_co_navigation_bar.dart';
 import 'package:mama_co/screens/account/user/user_gift_codes.dart';
 import 'package:mama_co/screens/account/widgets/feedback_button.dart';
 import 'package:mama_co/screens/account/widgets/terms_of_use_button.dart';
@@ -481,17 +482,7 @@ class _AccountUserScreenState extends State<AccountUserScreen> {
                                         ? InkWell(
                                             onTap: () {
                                               context.read<AccountBloc>().add(const AccountEvent.saveInfoUser());
-                                              ScaffoldMessenger.of(context).showSnackBar(
-                                                SnackBar(
-                                                  content: Text(
-                                                    'Сохранено',
-                                                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                                          color: AppColor.white,
-                                                        ),
-                                                  ),
-                                                  behavior: SnackBarBehavior.floating,
-                                                ),
-                                              );
+                                              FocusScope.of(context).requestFocus(FocusNode());
                                             },
                                             child: Container(
                                               margin: const EdgeInsets.only(

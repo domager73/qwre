@@ -418,6 +418,8 @@ class _AccountSpecialistScreenState extends State<AccountSpecialistScreen> {
                                     ? InkWell(
                                         onTap: () {
                                           context.read<AccountBloc>().add(const AccountEvent.saveInfoDoctor());
+                                          FocusScope.of(context).requestFocus(FocusNode());
+
                                         },
                                         child: Container(
                                             margin: const EdgeInsets.only(

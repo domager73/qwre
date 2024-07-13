@@ -35,13 +35,23 @@ class _WriteParametrChildState extends State<WriteParametrChild> {
 
   @override
   void initState() {
-    _focusWeight.addListener(() {
-      setState(() {
-        _isFocusWeight = true;
-      });
-    });
-    _title = TextEditingController(text: widget.value);
+    _focusWeight.addListener(_onFocusChange);
+
+    bool isTypedEver = false;
+    try{
+      isTypedEver = double.parse(widget.value) != 0;
+    } catch(e) {
+      isTypedEver = false;
+    }
+
+    _title = TextEditingController(text: isTypedEver ? widget.value : "");
     super.initState();
+  }
+
+  void _onFocusChange() {
+      setState(() {
+        _isFocusWeight = !_isFocusWeight;
+      });
   }
 
   @override
@@ -92,6 +102,7 @@ class _WriteParametrChildState extends State<WriteParametrChild> {
                   );
                 setState(() {});
               },
+
               decoration: InputDecoration(
                 isDense: true,
                 filled: true,

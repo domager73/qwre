@@ -29,6 +29,7 @@ class ChildService {
     required bool isTwins,
     required String secondName,
     required double weight,
+    required String info,
   }) async {
     String? accessToken =
         await _secureStorageService.getValue(SharedPrefKeys.accessToken);
@@ -47,6 +48,7 @@ class ChildService {
           "isTwins": isTwins,
           "secondName": secondName,
           "weight": weight,
+          "info": info
         });
         final response = await _dio.post(
           "/api/v1/child/",
