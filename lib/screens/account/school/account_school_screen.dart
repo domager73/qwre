@@ -165,9 +165,12 @@ class _AccountSchoolScreenState extends State<AccountSchoolScreen> {
                         ),
                       ),
                       const SizedBox(height: 8),
-                      BlocBuilder<AccountBloc, AccountState>(builder: (context, state) {
+                      BlocBuilder<AccountBloc, AccountState>(
+                          builder: (context, state) {
+                            print('STATE: ${state}');
                         return state.maybeMap(
                             preloadDataOnlineSchool: (initState) {
+                              print("!!!!!!!!!!!${initState}!!!!!!!!!!!!!!");
                               return CustomUniversalCard(
                                 title: initState.onlineSchoolDataModel.name,
                                 isEnabled: true,
@@ -376,6 +379,8 @@ class _AccountSchoolScreenState extends State<AccountSchoolScreen> {
                         ),
                         BlocBuilder<AccountBloc, AccountState>(
                           builder: (context, state) {
+                            print('REBUILD!!!!!!REBUILD!!!!!!REBUILD!!!!!!REBUILD!!!!!!REBUILD!!!!!!REBUILD!!!!!!');
+
                             return state.maybeMap(
                                 preloadDataOnlineSchool: (initState) {
                                   return initState.isSave
@@ -391,6 +396,9 @@ class _AccountSchoolScreenState extends State<AccountSchoolScreen> {
                                                 behavior: SnackBarBehavior.floating,
                                               ),
                                             );
+                                            FocusScope.of(context).requestFocus(FocusNode());
+
+
                                           },
                                           child: Container(
                                             margin: const EdgeInsets.only(top: 47),

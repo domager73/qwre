@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:models/models.dart';
 import 'package:repositories/repositories.dart';
+import 'package:repositories/repositories_bootstraper.dart';
 import 'package:shared/shared.dart';
 
 part 'account_bloc.freezed.dart';
@@ -529,6 +530,7 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
       RequestDataModel? result;
       if (initState.onlineSchoolDataModel.account != initState.defaultOnlineSchoolDataModel.account ||
           initState.onlineSchoolDataModel.name != initState.defaultOnlineSchoolDataModel.name) {
+
         result = await _schoolRepository.updateSchool(initState.onlineSchoolDataModel);
       }
 
@@ -538,8 +540,11 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
         ));
 
         final onlineSchoolModel = await _schoolRepository.getOnlineSchoolInfo();
-        log(onlineSchoolModel.toString());
+
+        log(initState.onlineSchoolDataModel.toString());
         log('------3------');
+        _schoolRepository.updateOnlineSchoolDataStream.add(LoadingStateEnum.success);
+
         emit(initState.copyWith(
           onlineSchoolDataModel: onlineSchoolModel,
           defaultOnlineSchoolDataModel: onlineSchoolModel,

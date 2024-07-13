@@ -57,6 +57,11 @@ class _MainScreenState extends State<MainScreen> {
                 'ONLINE_SCHOOL' => value.onlineSchoolDataModel?.account.avatar ?? '',
                 _ => '',
               };
+
+              print("------------------------");
+              print(value.onlineSchoolDataModel);
+              print("------------------------");
+
               return ListView(
                 children: [
                   const SizedBox(height: 10),
@@ -90,6 +95,7 @@ class _MainScreenState extends State<MainScreen> {
                               }
                               if (isOnlineSchool) {
                                 if (value.onlineSchoolDataModel != null && value.articles != null) {
+                                  print("NEW ${value.onlineSchoolDataModel}");
                                   context.read<AccountBloc>().add(
                                         AccountEvent.preloadDataOnlineSchool(
                                           value.onlineSchoolDataModel!,

@@ -2,6 +2,9 @@ import 'package:get_it/get_it.dart';
 import 'package:repositories/repositories.dart';
 import 'package:services/services.dart';
 
+enum LoadingStateEnum {wait, success, fail, loading}
+
+
 Future<void> initRepositories(GetIt getIt) async {
   getIt
     ..registerSingleton(

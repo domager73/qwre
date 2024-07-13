@@ -79,7 +79,7 @@ class OnlineSchoolService {
   Future<RequestResponse?> updateSchool(OnlineSchoolDataModel onlineSchoolDataModel) async {
     String? accessToken = await _secureStorageService.getValue(SharedPrefKeys.accessToken);
     RequestResponse? requestResponse;
-    log('accessToken $accessToken');
+    print('accessToken $accessToken');
     if (accessToken == null) return null;
     _dio.options.headers["authorization"] = 'Bearer $accessToken';
 

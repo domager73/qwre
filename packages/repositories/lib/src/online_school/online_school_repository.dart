@@ -1,10 +1,14 @@
 import 'package:api_models/api_models.dart';
 import 'package:models/models.dart';
+import 'package:repositories/repositories_bootstraper.dart';
+import 'package:rxdart/rxdart.dart';
 import 'package:services/services.dart';
 
 class OnlineSchoolRepository {
   final OnlineSchoolService _onlineSchoolService;
   OnlineSchoolRepository(this._onlineSchoolService);
+
+  BehaviorSubject<LoadingStateEnum> updateOnlineSchoolDataStream = BehaviorSubject.seeded(LoadingStateEnum.wait);
 
   Future<OnlineSchoolDataModel> getOnlineSchoolInfo() async {
     OnlineSchoolResponse? onlineSchoolResponse;

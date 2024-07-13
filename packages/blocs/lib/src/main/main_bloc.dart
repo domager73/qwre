@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:api_models/api_models.dart';
 import 'package:blocs/blocs.dart';
+import 'package:blocs/src/index.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:models/models.dart';
@@ -38,10 +39,14 @@ class MainBloc extends Bloc<MainEvent, MainState> {
         preloadData: (event) => _init(event, emit),
         updateDataUser: (event) => _updateUserInfo(event, emit),
         updateDataDoctor: (event) => _updateDoctorInfo(event, emit),
+        updateDataSchool: (event) => _updateSchoolInfo(event, emit),
       ),
     );
 
     userDataModelState();
+    // _onlineSchoolRepository.updateOnlineSchoolDataStream.stream.listen((event) =>
+    //   emit(MainState.load())
+    // );
   }
 
   StreamSubscription<dynamic>? userDataModelState() {
@@ -52,6 +57,11 @@ class MainBloc extends Bloc<MainEvent, MainState> {
         },
         preloadDataDoctor: (value) {
           add(MainEvent.updateDataDoctor(value.doctorDataModel));
+        },
+        preloadDataOnlineSchool: (value) {
+          print("VALUE ${value.onlineSchoolDataModel}");
+          print('go with name ${value.onlineSchoolDataModel.name}');
+          add(MainEvent.updateDataSchool(value.onlineSchoolDataModel));
         },
         orElse: () => null,
       );
@@ -90,6 +100,19 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       );
     });
   }
+
+  Future<void> _updateSchoolInfo(
+      UpdateDataSchoolMainEvent event,
+      Emitter<MainState> emit,
+      ) async {
+
+     state.mapOrNull(preloadDataCompleted: (initState)  {
+      emit(
+        MainState.preloadDataCompleted(role:initState.role , onlineSchoolDataModel: initState.onlineSchoolDataModel )
+      );
+    });
+  }
+
 
   Future<void> _init(
     InitMainEvent event,

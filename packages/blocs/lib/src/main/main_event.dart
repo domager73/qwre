@@ -9,4 +9,5 @@ class MainEvent with _$MainEvent {
   const factory MainEvent.updateDataDoctor(
     DoctorDataModel doctorDataModel,
   ) = UpdateDataDoctorMainEvent;
+  const factory MainEvent.updateDataSchool(OnlineSchoolDataModel onlineSchoolDataModel) = UpdateDataSchoolMainEvent;
 }
